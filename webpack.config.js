@@ -2,13 +2,16 @@
  * @Author: xulei
  * @Date:   2017-07-27 17:21:09
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-28 15:37:37
+ * @Last Modified time: 2017-07-29 14:16:33
  */
 
 'use strict';
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+// 环境变量的配置
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+console.log('WEBPACK_ENV');
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name) {
 		return {
@@ -27,7 +30,8 @@ var config = {
 		'login': ['./src/page/login/index.js'],
 	},
 	output: {
-		path: './dist',
+		path: './dist', //存放文件时的路径
+		publicPath: '/dist', //访问文件时的路径
 		filename: 'js/[name].js'
 	},
 	externals: {
@@ -54,6 +58,9 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('login')),
 	]
+}
+if ('dev' === WEBPACK_ENV) {
+	config.entry.common.push('webpack-dev-server/client? http://localhost:8080/');
 }
 
 module.exports = config;

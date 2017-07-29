@@ -2,11 +2,9 @@
  * @Author: xulei
  * @Date:   2017-07-27 12:13:50
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-28 12:37:04
+ * @Last Modified time: 2017-07-29 14:18:28
  */
 
 'use strict';
-var $$ = require('jquery');
-console.log('hello index');
-$$('body').html('index hello~~~~');
+alert('world');
 require('./index.css');
