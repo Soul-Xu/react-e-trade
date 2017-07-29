@@ -1,0 +1,28 @@
+{
+  "name": "react-e-trade",
+  "version": "1.0.0",
+  "description": "react-e-trade前端代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soul-Xu/react-e-trade.git"
+  },
+  "author": "soul_xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soul-Xu/react-e-trade/issues"
+  },
+  "homepage": "https://github.com/Soul-Xu/react-e-trade#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.5.0",
+    "html-webpack-plugin": "^2.29.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^1.15.0"
+  }
+}
