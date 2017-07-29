@@ -2,7 +2,7 @@
  * @Author: xulei
  * @Date:   2017-07-27 17:21:09
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-29 14:16:33
+ * @Last Modified time: 2017-07-30 01:06:13
  */
 
 'use strict';
@@ -45,6 +45,14 @@ var config = {
 			test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
 			loader: 'url-loader?limit=100&name=resouce/[name].[ext]'
 		}]
+	},
+	resolve: {
+		alias: {
+			util: __dirname + '/src/util',
+			page: __dirname + '/src/page',
+			service: __dirname + '/src/service',
+			image: __dirname + '/src/image',
+		}
 	},
 	plugins: [
 		// 独立通用模块js/base.js
