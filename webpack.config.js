@@ -2,7 +2,7 @@
  * @Author: xulei
  * @Date:   2017-07-27 17:21:09
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-30 01:06:13
+ * @Last Modified time: 2017-07-31 13:25:29
  */
 
 'use strict';
@@ -11,7 +11,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 // 环境变量的配置
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
-console.log('WEBPACK_ENV');
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name) {
 		return {

@@ -2,10 +2,11 @@
  * @Author: xulei
  * @Date:   2017-07-29 22:09:32
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-30 02:10:21
+ * @Last Modified time: 2017-07-31 14:11:04
  */
 
 'use strict';
+var Hogan = require('hogan.js');
 var conf = {
 	serverHost: '' // 接口地址和当前地址是一样的，所以设置为空
 };
@@ -57,8 +58,40 @@ var _share = { // 将所有参数封装在一起
 		// 一直到以&或字符串的末尾结束
 		var result = window.location.search.substr(1).match(reg);
 		// search就是url中问号里的参数
-		return result ? decodeUrlComponent(result[2]) : null;
+		return result ? decodeURIComponent(result[2]) : null;
 		// decodeUrlComponent解码，因为之前被编码过，result[2]传回的就是value的值
+	},
+	// 渲染HTML的方法：该方法将传入的模版和数据进行拼接
+	renderHtml: function(htmlTemplate, data) {
+		var template = Hogan.compile(htmlTemplate), // 做第一步的编译
+			result = template.render(data); // 将模版渲染出来
+		return result;
+	},
+	// 成功提示
+	successTigs: function(msg) {
+		alert(msg || '！操作成功!');
+	},
+	// 错误提示
+	errorTigs: function(msg) {
+		alert(msg || '操作失误!');
+	},
+	// 字段验证，支持非空判断、手机、邮箱的判断
+	// 将validate封装起来的一个目的是为了全站的标准化，避免混乱
+	validate: function(value, type) {
+		var value = $.trim(value);
+		// 先把拿到的value作处理，trim可以把字符串的前后空格去掉，另外可以将非字符串格式转化为字符串格式
+		// 非空验证
+		if ('require' === type) {
+			return !!value; // 将value强制转换成布尔值
+		}
+		// 手机号验证
+		if ('phone' === type) {
+			return /^1\d{10}$/.test(value); // 以1开头，10位数字结尾的字符串
+		}
+		// 邮箱格式验证
+		if ('email' === type) {
+			return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value); // 邮箱的正则比较复杂，可以在网上找找
+		}
 	},
 	// 统一登录处理
 	doLogin: function() {
@@ -66,5 +99,10 @@ var _share = { // 将所有参数封装在一起
 		// window.location.href为当前页面的路径，这样可能会出现问题，因为如果这里面有特殊字符的话，
 		// 路径在传的时候可能会被截断，以及其他问题。所以要将它编码encodeURIComponent(),这样比较安全
 		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+	},
+	goHome: function() {
+		window.location.href = './index.html';
 	}
 };
+
+module.exports = _share;
