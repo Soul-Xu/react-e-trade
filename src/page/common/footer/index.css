@@ -1,0 +1,22 @@
+/*
+* @Author: xulei
+* @Date:   2017-07-31 20:36:23
+* @Last Modified by:   xulei
+* @Last Modified time: 2017-07-31 20:47:51
+*/
+.footer {
+	padding-bottom: 10px;
+}
+.footer .links {
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}
+.footer .links .link {
+	padding: 0 10px;
+}
+.footer .copyright {
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}
