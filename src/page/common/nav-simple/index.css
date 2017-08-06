@@ -2,7 +2,7 @@
 * @Author: xulei
 * @Date:   2017-07-31 19:02:26
 * @Last Modified by:   xulei
-* @Last Modified time: 2017-08-02 18:48:45
+* @Last Modified time: 2017-08-07 02:05:28
 */
 .nav-simple {
 	height: 60px;
@@ -10,7 +10,7 @@
 	border-bottom: 1px solid #ccc;
 	background: #fff;
 }
-.logo {
+.nav-simple .logo {
 	font-size: 26px;
 	font-weight: bold;
 	color: #c60023;

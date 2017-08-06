@@ -2,7 +2,7 @@
 * @Author: xulei
 * @Date:   2017-07-31 16:30:49
 * @Last Modified by:   xulei
-* @Last Modified time: 2017-08-01 17:40:50
+* @Last Modified time: 2017-08-07 02:13:50
 *
 */
 /* css reset */
@@ -44,7 +44,23 @@ input[type='checkbox'] {
 	position: relative; /* 容器中如果有需要绝对定位的东西，以它为基准进行绝对定位 */
 	overflow: hidden; /* 用于清除浮动，如果不清楚浮动，外部容器是没有高度的 */
 }
-
+/* panel */
+.panel {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.panel .panel-title {
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.panel .panel-body {
+	padding: 10px;
+	overflow: hidden;
+}
 /* 全局通用样式 */
 /* 隐藏类 */
 .hide {

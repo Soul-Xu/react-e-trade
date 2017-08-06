@@ -2,7 +2,7 @@
  * @Author: xulei
  * @Date:   2017-07-29 22:09:32
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-07-31 14:11:04
+ * @Last Modified time: 2017-08-07 02:32:15
  */
 
 'use strict';
@@ -72,7 +72,7 @@ var _share = { // 将所有参数封装在一起
 		alert(msg || '！操作成功!');
 	},
 	// 错误提示
-	errorTigs: function(msg) {
+	errorTips: function(msg) {
 		alert(msg || '操作失误!');
 	},
 	// 字段验证，支持非空判断、手机、邮箱的判断
@@ -98,7 +98,7 @@ var _share = { // 将所有参数封装在一起
 		// 给login一个参数告诉它从哪跳转过来的，之后还要跳转回去（redirect部分）,
 		// window.location.href为当前页面的路径，这样可能会出现问题，因为如果这里面有特殊字符的话，
 		// 路径在传的时候可能会被截断，以及其他问题。所以要将它编码encodeURIComponent(),这样比较安全
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	},
 	goHome: function() {
 		window.location.href = './index.html';

@@ -2,7 +2,7 @@
  * @Author: xulei
  * @Date:   2017-07-31 19:40:27
  * @Last Modified by:   xulei
- * @Last Modified time: 2017-08-01 17:17:19
+ * @Last Modified time: 2017-08-04 23:42:33
  */
 
 'use strict';
@@ -25,7 +25,7 @@ var nav = {
 		});
 		// 注册点击事件
 		$('.js-register').click(function() {
-			window.location.href = './register.html';
+			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
 		$('.js-logout').click(function() {
